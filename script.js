@@ -28,29 +28,29 @@ for (var i = 0; i < hooks.length; i++) {
 }
 
 
-
-var scrollPos = document.getElementById(window.location.hash.substr(1)).offsetTop;
-
-scrollTo(0, window.innerHeight/2);
-
-var about = document.getElementById("about");
-
-document.getElementById("aboutbtn").addEventListener("click", function() {
-    about.className = " ";
-});
-
-document.getElementById("aboutclose").addEventListener("click", function() {
-    about.className = "hidden";
-});
-
-$('#backToTop').click(function () {
-	$("html, body").animate({
-            scrollTop: 0
-        }, 200);
-    
-        return false;
-});
-
+if (document.getElementById(window.location.hash) != null) {
+	var scrollPos = document.getElementById(window.location.hash.substr(1)).offsetTop;
+	
+	scrollTo(0, window.innerHeight/2);
+	
+	var about = document.getElementById("about");
+	
+	document.getElementById("aboutbtn").addEventListener("click", function() {
+		about.className = " ";
+	});
+	
+	document.getElementById("aboutclose").addEventListener("click", function() {
+		about.className = "hidden";
+	});
+	
+	$('#backToTop').click(function () {
+		$("html, body").animate({
+			scrollTop: 0
+		}, 200);
+		
+		return false;
+	});
+};
 
 
 
