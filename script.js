@@ -27,6 +27,33 @@ for (var i = 0; i < hooks.length; i++) {
 	} );
 }
 
+
+
+var scrollPos = document.getElementById(window.location.hash.substr(1)).offsetTop;
+
+scrollTo(0, window.innerHeight/2);
+
+var about = document.getElementById("about");
+
+document.getElementById("aboutbtn").addEventListener("click", function() {
+    about.className = " ";
+});
+
+document.getElementById("aboutclose").addEventListener("click", function() {
+    about.className = "hidden";
+});
+
+$('#backToTop').click(function () {
+	$("html, body").animate({
+            scrollTop: 0
+        }, 200);
+    
+        return false;
+});
+
+
+
+
 //add functionality to article/twitter tabs
 for (var x = 0; x < 2; x++) {
 	tabs[x].addEventListener("click", function() {
@@ -79,26 +106,3 @@ if (place.charAt(0) === '#') {
 		place = place.substr(0, place.length-2);
 	}
 }
-
-var scrollPos = document.getElementById(window.location.hash.substr(1)).offsetTop;
-
-scrollTo(0, window.innerHeight/2);
-
-
-var about = document.getElementById("about");
-
-document.getElementById("aboutbtn").addEventListener("click", function() {
-    about.className = " ";
-})
-
-document.getElementById("aboutclose").addEventListener("click", function() {
-    about.className = "hidden";
-})
-
-$('#backToTop').click(function () {
-	$("html, body").animate({
-            scrollTop: 0
-        }, 200);
-    
-        return false;
-});
