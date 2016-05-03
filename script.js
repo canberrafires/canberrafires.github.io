@@ -74,7 +74,17 @@ if (place.charAt(0) === '#') {
 			}
 		}
 		
-		line.dataset.used = "yes";
+		var hooks = document.getElementsByClassName("hook");
+		var thishook;
+		
+		for (var h = 0; hooks.length > h; h++) {
+			if (hooks[h].dataset.ref == place) {
+				thishook = hooks[h];
+				break;
+			}
+		}
+		console.log(thishook);
+		thishook.dataset.used = "yes";
 		first = false;
 		
 		place = place.substr(0, place.length-2);
