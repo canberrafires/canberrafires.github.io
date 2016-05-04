@@ -239,6 +239,13 @@ td + td {
     cursor: pointer;
 }
 
+#timeline .map img {
+	display: block;
+	background-color: #344153;
+	width: 50%;
+	margin: 1em auto;
+}
+
 
 
 
@@ -281,7 +288,12 @@ td + td {
 		font-size: 12px;
 	}
 }
-
+@media (max-width: 400px) {
+	#timeline .map img {
+		width: 90%;
+		margin: 1em auto;
+	}
+}
 
 
 

@@ -89,13 +89,15 @@ if (place.charAt(0) === '#') {
 		
 		place = place.substr(0, place.length-2);
 	}
-}
-
-if (document.getElementById(window.location.hash) != null) {
-	var scrollPos = document.getElementById(window.location.hash.substr(1)).offsetTop;
 	
-	scrollTo(0, window.innerHeight/2);
-};
+	console.log("finished epanding");
+	
+	setTimeout(function(){ 
+		var scrollPos = document.getElementById(window.location.hash.substr(1)).offsetTop;
+		console.log("last");
+		scrollTo(0,scrollPos-window.innerHeight/2);
+	}, 800);
+}
 
 
 //about popup
